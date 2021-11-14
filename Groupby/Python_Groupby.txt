@@ -1,0 +1,29 @@
+df=pd.read_csv("C:\\Users\\sc977\\OneDrive\\pythonNEW\\db\\a.csv")
+
+genre=df.groupby("Genre")
+
+
+genre.Name.ngroups
+
+df_Genre = genre.get_group('Shooter').describe().T
+df_Genre.head(10)
+
+a=df.groupby("Publisher").Global_Sales.max()
+a
+
+maxi=df.groupby('Publisher').Year()
+maxi
+
+deger=df.groupby('sex').tip.agg(['max', 'min', 'count', 'median', 'mean'])
+
+# Group by multiple categories
+df_subset.groupby(['Sex', 'Pclass']).mean()
+
+coklu_groupby = df.groupby(['sex', 'smoker','day','time']).sum()
+coklu_groupby
+
+
+
+f_avg = df_sample[f_filter]['Height'].mean()
+m_avg = df_sample[m_filter]['Height'].mean()
+print(f_avg,m_avg)
